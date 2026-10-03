@@ -1,0 +1,9 @@
+{
+  "build": {
+    "type": "maven",
+    "goal": "-f backend/pom.xml package"
+  },
+  "deploy": {
+    "goal": "-f backend/pom.xml -Dspring-boot.run.profiles=cloud spring-boot:run"
+  }
+}
