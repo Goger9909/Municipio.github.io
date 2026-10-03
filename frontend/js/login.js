@@ -180,10 +180,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return new URL(endpoint, `${configuredUrl.toString().replace(/\/+$/, '')}/`).toString();
         }
 
-        const backendUrl = ['localhost', '127.0.0.1'].includes(window.location.hostname)
-            ? `${window.location.protocol}//${window.location.hostname}:8080`
-            : window.location.origin;
-        return new URL(endpoint, `${backendUrl}/`).toString();
+        if (['localhost', '127.0.0.1'].includes(window.location.hostname)) {
+            return new URL(endpoint, `${window.location.protocol}//${window.location.hostname}:8080/`).toString();
+        }
+
+        throw new Error(
+            'El acceso y el registro todavía no están conectados: falta configurar la URL pública del backend en municipio-api-base-url.'
+        );
     }
 
     function esContrasenaValida(password) {

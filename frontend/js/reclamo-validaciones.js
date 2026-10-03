@@ -180,7 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (['localhost', '127.0.0.1'].includes(window.location.hostname)) {
             return `${window.location.protocol}//${window.location.hostname}:8080`;
         }
-        return window.location.origin;
+
+        throw new Error(
+            'El envío de reclamos todavía no está conectado: falta configurar la URL pública del backend en reclamos-api-base-url.'
+        );
     }
 
     function esUrlHttpValida(value) {
