@@ -4,7 +4,7 @@ Sitio web estático del Municipio Serranoble, publicado con GitHub Pages.
 
 ## Publicación
 
-El flujo de GitHub Actions publica automáticamente el contenido de `frontend/` cuando se actualiza la rama `main`. También se puede iniciar manualmente desde la pestaña **Actions**.
+La página principal del repositorio redirige a `frontend/index.html`, por lo que el sitio también abre si GitHub Pages está configurado para publicar desde la rama. El flujo de GitHub Actions publica directamente el contenido de `frontend/` cuando se actualiza `main`; también se puede iniciar manualmente desde la pestaña **Actions**. Si elegís GitHub Actions como origen en **Settings > Pages > Build and deployment**, el sitio publicado abre directamente la aplicación.
 
 La URL del sitio de este repositorio es:
 
